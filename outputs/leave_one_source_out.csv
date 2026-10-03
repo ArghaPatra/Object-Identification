@@ -1,0 +1,4 @@
+held_out,n,accuracy,f1_macro
+generated,1250,1.0,1.0
+kaggle_2d,2000,1.0,1.0
+kaggle_simple,900,0.9988888888888889,0.9994435169727324

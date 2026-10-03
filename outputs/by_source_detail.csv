@@ -1,0 +1,16 @@
+model,held_out,accuracy,f1_present
+LogReg,generated,0.999,0.998999993749961
+LogReg,kaggle_2d,1.0,1.0
+LogReg,kaggle_simple,0.9972222222222222,0.99860529986053
+DecisionTree,generated,1.0,1.0
+DecisionTree,kaggle_2d,1.0,1.0
+DecisionTree,kaggle_simple,0.9958333333333333,0.9979035639412999
+KNN,generated,1.0,1.0
+KNN,kaggle_2d,1.0,1.0
+KNN,kaggle_simple,0.9513888888888888,0.9737827715355806
+SVM,generated,1.0,1.0
+SVM,kaggle_2d,1.0,1.0
+SVM,kaggle_simple,0.9666666666666667,0.9824561403508771
+RandomForest,generated,1.0,1.0
+RandomForest,kaggle_2d,1.0,1.0
+RandomForest,kaggle_simple,1.0,1.0
