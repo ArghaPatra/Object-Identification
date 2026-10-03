@@ -1,0 +1,16 @@
+features,model,n_features,accuracy,f1_macro,f1_std
+full,LogReg,16,1.0,1.0,0.0
+full,DecisionTree,16,1.0,1.0,0.0
+full,KNN,16,0.9993975903614458,0.9993531984777425,0.000792166847193106
+full,SVM,16,1.0,1.0,0.0
+full,RandomForest,16,1.0,1.0,0.0
+reduced,LogReg,9,1.0,1.0,0.0
+reduced,DecisionTree,9,1.0,1.0,0.0
+reduced,KNN,9,1.0,1.0,0.0
+reduced,SVM,9,1.0,1.0,0.0
+reduced,RandomForest,9,1.0,1.0,0.0
+minimal,LogReg,5,1.0,1.0,0.0
+minimal,DecisionTree,5,1.0,1.0,0.0
+minimal,KNN,5,1.0,1.0,0.0
+minimal,SVM,5,1.0,1.0,0.0
+minimal,RandomForest,5,1.0,1.0,0.0
