@@ -1,0 +1,6 @@
+level,exact_before,classes_ok_before,abs_err_before,exact_after,classes_ok_after,abs_err_after
+clean,1.0,1.0,0.0,1.0,1.0,0.0
+noisy,1.0,1.0,0.0,1.0,1.0,0.0
+blurry,1.0,0.975,0.0,1.0,0.975,0.0
+touching,0.75,0.75,0.25,1.0,0.925,0.0
+overlap,0.475,0.475,0.75,0.825,0.65,0.2
