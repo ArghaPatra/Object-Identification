@@ -37,7 +37,7 @@ Metadata is stored in a SQLite database (`data/shapes.db`, schema in `src/schema
 
 ### Classification
 
-**Model comparison.** Accuracy under leave-one-source-out cross-validation (5 features, training split only):
+**Model comparison.** Accuracy under leave-one-source-out cross-validation (training split only). All models except the CNN use the 5 geometric features; the CNN uses the raw 64x64 silhouettes:
 
 | Model | held-out generated | held-out kaggle_2d | held-out kaggle_simple |
 |---|---|---|---|
@@ -46,8 +46,10 @@ Metadata is stored in a SQLite database (`data/shapes.db`, schema in `src/schema
 | Decision tree | 1.000 | 1.000 | 0.996 |
 | SVM (RBF) | 1.000 | 1.000 | 0.967 |
 | KNN | 1.000 | 1.000 | 0.951 |
+| MLP (32, 16) | 1.000 | 1.000 | 0.999 |
+| CNN (raw 64x64 silhouettes) | 0.986 | 0.996 | 0.987 |
 
-All models score high, and Random Forest is the best by a small margin. KNN and SVM drop slightly on `kaggle_simple`, whose small, jagged shapes shift some features (for example the vertex count).
+All models score high. Random Forest is the best by a small margin, followed by the MLP. A small CNN trained directly on the silhouettes (3 convolution layers, 12 epochs, rotation and flip augmentation) reaches 100% on the test split and 98.6% to 99.6% under leave-one-source-out, without any hand-crafted features. KNN and SVM drop slightly on `kaggle_simple`, whose small, jagged shapes shift some features (for example the vertex count). Results are from single runs, so differences of about one percent between the top models are within what a different random seed could change.
 
 **Final evaluation** of the selected model (Random Forest, 5 features):
 
