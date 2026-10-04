@@ -74,6 +74,18 @@ Metadata is stored in a SQLite database (`data/shapes.db`, schema in `src/schema
 
 \### Classification
 
+**Model comparison.** Accuracy under leave-one-source-out cross-validation (5 features, training split only):
+
+| Model | held-out generated | held-out kaggle_2d | held-out kaggle_simple |
+|---|---|---|---|
+| Random Forest | 1.000 | 1.000 | 1.000 |
+| Logistic regression | 0.999 | 1.000 | 0.997 |
+| Decision tree | 1.000 | 1.000 | 0.996 |
+| SVM (RBF) | 1.000 | 1.000 | 0.967 |
+| KNN | 1.000 | 1.000 | 0.951 |
+
+All models score high, and Random Forest is the best by a small margin. KNN and SVM drop slightly on `kaggle_simple`, whose small, jagged shapes shift some features (for example the vertex count).
+
 
 
 | Evaluation | Result |
