@@ -104,4 +104,13 @@ conda activate shapes
 python src/generate_shapes.py        # generated single shapes and scenes
 ```
 
+## Using it on a new image
+
+```bash
+python train_model.py            # trains and saves models/shape_rf.joblib (once)
+python predict.py my_image.png   # prints the counts and saves outputs/predictions/my_image_result.png
+```
+
+Works best on flat-coloured shapes on a plain background. Shapes outside the five classes (for example rectangles) are assigned to the nearest class.
+
 Then download the Kaggle data into `data/raw/` and run the notebooks in order (03 to 10). Run notebook 04 only once; it rebuilds the database, and notebook 05 adds the statistics columns.
