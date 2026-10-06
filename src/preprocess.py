@@ -4,14 +4,18 @@ import numpy as np
 SIZE, PAD = 64, 4
 
 
-def shape_mask(img_bgr):
+def shape_mask(img_bgr, low_contrast=False, low_thresh=25):
     """Binary mask (255 = shape) from colour distance to the background."""
     img = cv2.GaussianBlur(img_bgr, (5, 5), 0)
     border = np.concatenate([img[0], img[-1], img[:, 0], img[:, -1]])
     bg = np.median(border, axis=0)
     dist = np.linalg.norm(img.astype(np.float32) - bg, axis=2)
-    dist = np.clip(dist * (255 / max(dist.max(), 1)), 0, 255).astype(np.uint8)
-    _, mask = cv2.threshold(dist, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+    scale = 255 / max(dist.max(), 1)
+    d8 = np.clip(dist * scale, 0, 255).astype(np.uint8)
+    t, mask = cv2.threshold(d8, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+    if low_contrast:   # keep pale shapes even when other shapes are very dark
+        thr = min(t / scale, low_thresh)
+        mask = ((dist > thr) * 255).astype(np.uint8)
     return mask
 
 
