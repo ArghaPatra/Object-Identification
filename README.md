@@ -2,7 +2,7 @@
 
 IDC409 project, topic 6: **Object Identification**. Identify and count simple geometric shapes (circle, triangle, square, pentagon, hexagon) in generated images and in Kaggle datasets.
 
-Authors: ARGHA PATRA (MS24159); SUJAY MITRA (MS23058); KAVYAJEET SINGH (MS24223)
+Authors: Argha Patra(MS24159); Sujay Mitra(MS23058); Kavyajeet Singh(MS24223)
 
 ## Overview
 
