@@ -2,13 +2,13 @@
 
 IDC409 project, topic 6: **Object Identification**. Identify and count simple geometric shapes (circle, triangle, square, pentagon, hexagon) in generated images and in Kaggle datasets.
 
-Authors: Argha Patra(MS24159); Sujay Mitra(MS23058); Kavyajeet Singh(MS24223)
+Authors: Argha Patra(MS24159); Sujay Mitra(MS23058); Kavyajeet(MS24223)
 
 ## Overview
 
 The pipeline has two parts:
 
-1. **Classification.** Each image is reduced to a centred 64x64 binary silhouette. Five geometric features are extracted and classified with a Random Forest.
+1. **Classification.** Each image is reduced to a centered 64x64 binary silhouette. Five geometric features are extracted and classified with a Random Forest.
 2. **Counting.** In multi-shape scenes, every contour is detected, normalised in exactly the same way as the training silhouettes, and classified. Touching shapes are separated with a distance transform and watershed.
 
 ## Data
